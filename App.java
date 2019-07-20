@@ -11,6 +11,26 @@ import com.hmkcode.vo.Article;
 
 public class App 
 {
+    
+    public static void notSoFinal() throws NoSuchFieldException, IllegalAccessException, InterruptedException {
+    ExampleClass example = new ExampleClass(10);
+    System.out.println("Final value was: "+ example.finalValue);
+    Field f = example.getClass().getDeclaredField("finalValue");
+    Field modifiersField = Field.class.getDeclaredField("modifiers");
+    modifiersField.setAccessible(true);
+    modifiersField.setInt(f, f.getModifiers() & ~Modifier.FINAL);
+    f.setInt(example, 77);
+    System.out.println("Final value was: "+ example.finalValue);
+}
+ 
+public static class ExampleClass {
+    final int finalValue;
+ 
+    public ExampleClass(int finalValue){
+        this.finalValue = finalValue;
+    }
+}
+    
     public static void horribleIteration(String [] words){
     int i = 0;
     try {

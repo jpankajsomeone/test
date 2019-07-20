@@ -22,9 +22,9 @@ class Cycle {
         adjacencyMatrix = new int[nodes][nodes];
         visited = new boolean[nodes];
 
-        for (int i = 0; i < nodes; i++) {
+        for (int i = 0; i < nodes; i++) 
             visited[i] = false;
-        }
+        
 
         System.out.println("Enter the details of each edges <Start Node> <End Node>");
 

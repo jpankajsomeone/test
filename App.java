@@ -11,6 +11,18 @@ import com.hmkcode.vo.Article;
 
 public class App 
 {
+    public static void horribleIteration(String [] words){
+    int i = 0;
+    try {
+        while(true){
+            System.out.println(words[i]);
+            i++;
+        }
+    } catch (IndexOutOfBoundsException e){
+        //iteration complete
+    }
+}
+    
     public static void main( String[] args )
     {
     	Gson gson = new Gson();

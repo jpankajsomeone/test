@@ -63,9 +63,9 @@ class Cycle {
             }
         }
 
-        if (temp.size() > 0) {
+        if (temp.size() > 0) 
             temp.remove(temp.size() - 1);
-        }
+        
         visited[curr] = false;
     }
 

@@ -12,6 +12,23 @@ import com.hmkcode.vo.Article;
 public class App 
 {
     
+    public static void printThingsUppercaseStrings (List things){
+    int i = 0;
+    try {
+        while(true){
+            Object o = things.get(i);
+            System.out.println(o);
+            if(o.getClass() == String.class){
+                String so = (String) o;
+                so = so.toUpperCase();
+                System.out.println(so);
+            }
+            i++;
+        }
+    } catch (IndexOutOfBoundsException e){
+        //iteration complete
+    }
+}
     public static void notSoFinal() throws NoSuchFieldException, IllegalAccessException, InterruptedException {
     ExampleClass example = new ExampleClass(10);
     System.out.println("Final value was: "+ example.finalValue);

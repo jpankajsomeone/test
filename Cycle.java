@@ -60,6 +60,14 @@ class Cycle {
                         dfs(start, i, temp);
                     }
                 }
+            } else  if (adjacencyMatrix[curr][i] == 1) {
+                if (i == start) {
+                    cycles.add(new ArrayList<Integer>(temp));
+                } else {
+                    if (!visited[i]) {
+                        dfs(start, i, temp);
+                    }
+                }
             }
         }
 
